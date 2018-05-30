@@ -1,0 +1,1 @@
+Contains two launchers, one launching the app in full screen mode, the other in standard mode.
