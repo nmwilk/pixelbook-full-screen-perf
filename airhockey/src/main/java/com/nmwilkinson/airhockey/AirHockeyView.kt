@@ -1,4 +1,4 @@
-package com.tophatch.fullscreenperf.airhockey
+package com.nmwilkinson.airhockey
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,7 +9,6 @@ import android.util.AttributeSet
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
-import com.tophatch.fullscreenperf.R
 
 class AirHockeyView(context: Context, attributeSet: AttributeSet) : View(context, attributeSet) {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -18,7 +17,7 @@ class AirHockeyView(context: Context, attributeSet: AttributeSet) : View(context
     private lateinit var xBounds: IntRange
     private lateinit var yBounds: IntRange
 
-    private val physics = Physics()
+    private val physics = BasicPhysics()
 
     private val gestureListener = object : GestureDetector.SimpleOnGestureListener() {
         override fun onDown(e: MotionEvent): Boolean {

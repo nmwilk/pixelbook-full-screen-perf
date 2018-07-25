@@ -1,9 +1,9 @@
-package com.tophatch.fullscreenperf.airhockey
+package com.nmwilkinson.airhockey
 
 import android.graphics.PointF
 import android.os.SystemClock
 
-class Physics {
+class BasicPhysics {
     val ballX: Float
         get() {
             return ballPos.x
@@ -16,11 +16,9 @@ class Physics {
 
     fun resetBall(x: Float, y: Float) {
         ballPos.set(x, y)
-        positionIncrements = 0
         flingVelocity = null
     }
 
-    private var positionIncrements: Int = 0
     private var flingTime: Long = 0
 
 
@@ -31,7 +29,6 @@ class Physics {
     }
 
     fun updatePosition(xBounds: IntRange, yBounds: IntRange) {
-        ++positionIncrements
         flingVelocity?.let { vel ->
             val now = time()
             val duration = now - prevTime
